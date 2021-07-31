@@ -18,5 +18,9 @@ Route::get('/', function () {
 Route::get('login',[AuthController::class,'show'])->name('login');
 // Route::post('login',[AuthController::class,'login'])->name('login');
 Route::get('grave',[GraveController::class,'index']);
+Route::get('grave-card-view',[GraveController::class,'card']);
+Route::get('grave-create',[GraveController::class,'create']);
+Route::post('grave-store',[GraveController::class,'store']);
+
 Route::get('owner',[OwnerController::class,'index']);
 Route::get('purchase',[PurchaseController::class,'index']);

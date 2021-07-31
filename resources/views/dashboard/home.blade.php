@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Graves</h1>
+                    <h1 class="m-0">Dashboard</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -20,100 +20,75 @@
     </div>
 
     <div class="content">
-        <div class="row">
-            <div class="col-12 col-sm-6 col-md-3">
-                <div class="info-box">
-                    <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
-
-                    <div class="info-box-content">
-                        <span class="info-box-text">CPU Traffic</span>
-                        <span class="info-box-number">
-                            10
-                            <small>%</small>
-                        </span>
+         <div class="card">
+             <div class="card-header text-center">
+                 <h3 class="top-header">Plano Mutual Cemetery</h3>
+             </div>
+             <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6" style="border-right: 2px solid #18fafff7;">
+                        <div class="card-header text-center">
+                            <h5 class="sec-header">Data Entry</h5>
+                        </div>
+                        <div class="mt-4">
+                            <a href="#" class="btn btn-default" >Enter/Edit Owners Purchase Graves</a>
+                        </div>
+                        <div class="mt-4">
+                            <a href="#" class="btn btn-default" >Enter/Edit  Graves Info</a>
+                        </div>
                     </div>
-                    <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-            <div class="col-12 col-sm-6 col-md-3">
-                <div class="info-box mb-3">
-                    <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
-
-                    <div class="info-box-content">
-                        <span class="info-box-text">Likes</span>
-                        <span class="info-box-number">41,410</span>
+                    <div class="col-md-6" style="border-left: 2px solid #18fafff7;">
+                        <div class="card-header text-center">
+                            <h5 class="sec-header">Reports</h5>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mt-4">
+                                <a href="#" class="btn btn-default" >List Owaners by section</a>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <a href="#" class="btn btn-default" >List Owners by name</a>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <a href="#" class="btn btn-default" >List Owaners of section by purchase date</a>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <a href="#" class="btn btn-default" >Burials By Deceased Name</a>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <a href="#" class="btn btn-default" >Grave Available for Sale</a>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <a href="#" class="btn btn-default" >Masonic Graves Listing</a>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <a href="#" class="btn btn-default" >Graves Listing</a>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <a href="#" class="btn btn-default" >Owners Listing by Owners#</a>
+                            </div>
+                        </div>
                     </div>
-                    <!-- /.info-box-content -->
                 </div>
-                <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-            <!-- fix for small devices only -->
-            <div class="clearfix hidden-md-up"></div>
-
-            <div class="col-12 col-sm-6 col-md-3">
-                <div class="info-box mb-3">
-                    <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
-
-                    <div class="info-box-content">
-                        <span class="info-box-text">Sales</span>
-                        <span class="info-box-number">760</span>
-                    </div>
-                    <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-            <div class="col-12 col-sm-6 col-md-3">
-                <div class="info-box mb-3">
-                    <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
-
-                    <div class="info-box-content">
-                        <span class="info-box-text">New Members</span>
-                        <span class="info-box-number">2,000</span>
-                    </div>
-                    <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-        </div>
-        <hr style="border: 2px groove #939;">
-
-        <div class="row">
-            <div class="col-12 col-sm-6 col-md-3">
-                <div class="info-box">
-                    <!-- <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span> -->
-
-                    <div class="info-box-content">
-                        <strong> <span class="info-box-text">List Owners by Section</span></strong>
-                        <!-- <span class="info-box-text">List Owners by Section</span> -->
-
-
-                    </div>
-                    <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-            </div>
-
-            <!-- /.col -->
-            <div class="col-12 col-sm-6 col-md-3">
-                <div class="info-box">
-                    <div class="card-body">
-                        <a class="btn btn-app ">
-                            <i class="fas fa-edit"></i> Edit
-                        </a>
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
+             </div>
+         </div>
     </div>
 </div>
 
 @endsection
+
+@push('css')
+    <style>
+        .card-header{
+            background: #00fff7;
+        }
+        .top-header{
+            font-weight: 900;
+        }
+        .sec-header{
+            font-weight: 600;
+        }
+        a.btn.btn-default {
+            border: 2px solid burlywood;
+        }
+    </style>
+@endpush

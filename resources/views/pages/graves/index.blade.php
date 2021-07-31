@@ -54,19 +54,20 @@
 <div class="content">
     <div class="card">
         <div class="card-body">
+            <a href="{{ url('grave-card-view') }}"> <i class="nav-icon fas fa-th" aria-hidden="true"></i> Card view</a>
             <div class="table-responsive mb-3">
-                    <form method="GET" style="margin-bottom: 10px !important;" action="{{ url('/grave') }}" accept-charset="UTF-8"
-                        class="form-inline my-2 my-lg-0 float-right" role="search">
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="search" placeholder="Search..."
-                                value="{{ request('search') }}">
-                            <span class="input-group-append">
-                                <button class="btn btn-secondary" type="submit">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                        </div>
-                    </form>
+                <form method="GET" style="margin-bottom: 10px !important;" action="{{ url('/grave') }}"
+                    accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="search" placeholder="Search..."
+                            value="{{ request('search') }}">
+                        <span class="input-group-append">
+                            <button class="btn btn-secondary" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </form>
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
@@ -101,7 +102,7 @@
                             <td>{{$item['Grave#']}}</td>
                             <td>{{$item['LotIndex#']}}</td>
                             <td>{{$item->LotText}}</td>
-                            <td>{{$item->Interred}}</td>
+                            <td>{{$item['Interred']? 'Yes' : 'No'}}</td>
                             <td>{{$item->Deceased_Salutation}}</td>
                             <td>{{$item->Deceased_Fname}}</td>
                             <td>{{$item->Deceased_Lname}}</td>

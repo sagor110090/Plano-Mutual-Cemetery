@@ -26,13 +26,6 @@ class GraveController extends Controller
                         ->orWhere('LotIndex#' , 'LIKE' , "%$keyword%")
                         ->orWhere('LotText' , 'LIKE' , "%$keyword%")
                         ->orWhere('Interred' , 'LIKE' , "%$keyword%")
-                        // ->orWhere('Deceased_Salutation' , 'LIKE' , "%$keyword%")
-                        // ->orWhere('Deceased_Fname' , 'LIKE' , "%$keyword%")
-                        // ->orWhere('Deceased_Lname' , 'LIKE' , "%$keyword%")
-                        // ->orWhere('Deceased_Pname' , 'LIKE' , "%$keyword%")
-                        // ->orWhere('Deceased_BirtdDate' , 'LIKE' , "%$keyword%")
-                        // ->orWhere('Deceased_DeatdDate' , 'LIKE' , "%$keyword%")
-                        // ->orWhere('Deceased_BurialDate' , 'LIKE' , "%$keyword%")
                         ->orWhere('Grave_Notes' , 'LIKE' , "%$keyword%")
                         ->orWhere('Vet' , 'LIKE' , "%$keyword%")
                         ->orWhere('Available' , 'LIKE' , "%$keyword%")
@@ -43,5 +36,40 @@ class GraveController extends Controller
         }
 
         return view('pages.graves.index', compact('graves'));
+    }
+    public function card(Request $request)
+    {
+        $keyword = $request->get('search');
+        $perPage = 13;
+
+        if (!empty($keyword)) {
+            $graves = Grave::where('GraveID' , 'LIKE' , "%$keyword%")
+                        ->orWhere('Section' , 'LIKE' , "%$keyword%")
+                        ->orWhere('Lot#' , 'LIKE' , "%$keyword%")
+                        ->orWhere('Grave#' , 'LIKE' , "%$keyword%")
+                        ->orWhere('LotIndex#' , 'LIKE' , "%$keyword%")
+                        ->orWhere('LotText' , 'LIKE' , "%$keyword%")
+                        ->orWhere('Interred' , 'LIKE' , "%$keyword%")
+                        ->orWhere('Grave_Notes' , 'LIKE' , "%$keyword%")
+                        ->orWhere('Vet' , 'LIKE' , "%$keyword%")
+                        ->orWhere('Available' , 'LIKE' , "%$keyword%")
+                        ->orWhere('spacetype' , 'LIKE' , "%$keyword%")
+                        ->paginate($perPage);
+        } else {
+            $graves = Grave::paginate($perPage);
+        }
+
+        return view('pages.graves.card-view', compact('graves'));
+    }
+
+    public function create()
+    {
+        return view('pages.graves.create');
+    }
+
+    public function store(Request $request)
+    {
+        // dd($request->all());
+        Grave::create($request->all());
     }
 }
