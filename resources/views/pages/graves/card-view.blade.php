@@ -55,7 +55,7 @@
         <a href="{{ url('grave') }}"> <i class="nav-icon fas fa-th" aria-hidden="true"></i> Table view</a>
         <div class="row">
             <div class="col-md-12">
-                <form method="GET" style="margin-bottom: 10px !important;" action="{{ url('/grave') }}"
+                <form method="GET" style="margin-bottom: 10px !important;" action="{{ url('/grave-card-view') }}"
                     accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
                     <div class="input-group">
                         <input type="text" class="form-control" name="search" placeholder="Search..."
@@ -77,7 +77,7 @@
                                 <h3>{{$item['GraveID']}}</h3>
                             </div>
                             <div class="card-body">
-                                <div class="card-text" >GraveID: {{$item->GraveID}}</div>
+                                <div class="card-text" >GraveID: {{$item['GraveID']}}</div>
                                 <div class="card-text" >Section: {{$item->Section}}</div>
                                 <div class="card-text" >Lot: {{$item['Lot#']}}</div>
                                 <div class="card-text" >Grave: {{$item['Grave#']}}</div>
@@ -99,8 +99,9 @@
                             </div>
                             <div class="card-footer text-center">
                                 <a href="#" class="btn btn-info m-1">View</a>
-                                <a href="#" class="btn btn-primary m-1">Edit</a>
+                                <a href="{{ asset('grave-edit/'.$item["GraveID"]) }}" class="btn btn-primary m-1">Edit</a>
                                 <a href="#" class="btn btn-danger m-1">Delete</a>
+                                <a href="{{ asset('grave-map?graveId='.$item["GraveID"]) }}" class="btn btn-danger m-1"> <i class="fa fa-map-marker" aria-hidden="true"></i> Map</a>
                             </div>
                         </div>
                     </div>
