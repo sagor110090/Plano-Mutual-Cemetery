@@ -88,8 +88,10 @@ class GraveController extends Controller
 
     public function update(Request $request,$id)
     {
-        dd($request->all());
-         Grave::where('GraveID',$id)->update([$request->all()]);
+        // dd($request->all());
+         $data = Grave::where('GraveID',$id)->first();
+        //  dd($data);
+         $data->update($request->except('_token'));
     }
 
 }

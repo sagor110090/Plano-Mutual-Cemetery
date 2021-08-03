@@ -24,7 +24,7 @@ Route::post('grave-store',[GraveController::class,'store']);
 Route::get('grave-map',[GraveController::class,'map']);
 Route::get('grave-delete',[GraveController::class,'delete']);
 Route::get('grave-edit/{id}',[GraveController::class,'edit']);
-Route::put('grave-update/{id}',[GraveController::class,'update']);
+Route::post('grave-update/{id}',[GraveController::class,'update']);
 
 Route::get('owner',[OwnerController::class,'index']);
 Route::get('purchase',[PurchaseController::class,'index']);

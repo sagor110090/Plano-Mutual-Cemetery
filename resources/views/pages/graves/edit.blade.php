@@ -31,7 +31,6 @@
             @endif
              <form action="{{ url('grave-update/'.$grave['GraveID']) }}" method="post" class="m-4">
                 @csrf
-                @method('put')
                 <div class="offset-md-3">
                 <div class="form-group row">
                     <label class="col-md-2" for="GraveID">GraveID</label>
@@ -55,13 +54,13 @@
                 </div>
                 <div class="form-group row">
                     <label class="col-md-2" for="LotText">LotText</label>
-                    <input type="text" value="{{ $grave['LotText#'] }}" maxlength="2" class="form-control col-md-4" name="LotText" id="LotText">
+                    <input type="text" value="{{ $grave['LotText'] }}" maxlength="2" class="form-control col-md-4" name="LotText" id="LotText">
                 </div>
                 <div class="form-group row">
                     <label class="col-md-2" for="Interred">Interred</label>
                     <div class="form-check">
                       <label class="form-check-label">
-                        <input type="checkbox"   class="form-check-input" name="Interred" id="Interred" value="{{ $grave['Interred#'] }}" {{ $grave['Interred#'] == 1 ? 'checked' : '' }}>
+                        <input type="checkbox"   class="form-check-input" name="Interred" id="Interred" value="1" {{ $grave['Interred#'] == 1 ? 'checked' : '' }}>
                         yes
                       </label>
                     </div>
@@ -111,7 +110,7 @@
                     <input type="text"  maxlength="3" class="form-control col-md-4" name="spacetype" id="spacetype">
                 </div> --}}
 
-                <button type="submit" class="btn btn-success offset-md-6">Save</button>
+                <button type="submit" class="btn btn-success offset-md-6">Update</button>
             </div>
              </form>
 
