@@ -13,12 +13,14 @@ class AuthController extends Controller
     }
     public function login(Request $request)
     {
+        // dd($request->all());
         $request->validate([
             'username' => 'required',
             'password' => 'required',
         ]);
 
-        $credentials = $request->only('username', 'password');
+        $credentials =   ['username' => $request->username,'password' => encrypt($request->password)];
+        dd($credentials);
         if (Auth::attempt($credentials)) {
             return redirect()->intended('dashboard')
                         ->withSuccess('Signed in');

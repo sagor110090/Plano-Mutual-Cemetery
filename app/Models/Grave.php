@@ -9,9 +9,7 @@ class Grave extends Model
     protected $table = "Graves";
 
     public $timestamps = false;
-
-    //  protected $primaryKey = 'GraveID';
-    protected $primaryKey = null;
+    protected $primaryKey = 'GraveID';
     public $incrementing = false;
 
     protected $fillable = [

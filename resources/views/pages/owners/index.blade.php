@@ -21,6 +21,8 @@
 
 
 <div class="content">
+    <a href="{{ url('owner-card-view') }}"> <i class="nav-icon fas fa-th" aria-hidden="true"></i> Table view</a>
+
     <div class="card">
         <div class="card-body">
             <div class="table-responsive mb-3">

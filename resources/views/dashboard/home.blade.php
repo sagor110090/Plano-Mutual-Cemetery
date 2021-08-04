@@ -31,10 +31,13 @@
                             <h5 class="sec-header">Data Entry</h5>
                         </div>
                         <div class="mt-4">
-                            <a href="#" class="btn btn-default" >Enter/Edit Owners Purchase Graves</a>
+                            <a href="{{ url('purchase-create') }}" class="btn btn-default" >Enter Owners Purchase Graves</a>
                         </div>
                         <div class="mt-4">
-                            <a href="#" class="btn btn-default" >Enter/Edit  Graves Info</a>
+                            <a href="{{ url('grave-create') }}" class="btn btn-default" >Enter  Graves Info</a>
+                        </div>
+                        <div class="mt-4">
+                            <a href="{{url('owner-create')}}" class="btn btn-default" >Enter  Owner Info</a>
                         </div>
                     </div>
                     <div class="col-md-6" style="border-left: 2px solid #18fafff7;">

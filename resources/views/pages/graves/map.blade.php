@@ -114,8 +114,8 @@
 var arLayers;
 var map;
 var cemetery;
-var url = 'php/core.php';  // GeoJSON from live PHP data feed.
-var urlSection= 'php/sections.php';  // GeoJSON from live PHP data feed.
+var url = '/core';  // GeoJSON from live PHP data feed.
+var urlSection= '/sections';  // GeoJSON from live PHP data feed.
 //var url = 'data/Absec.geojson';// GeoJSON from local.
 var fp;
 var lyrOsm;
@@ -322,11 +322,10 @@ function returnLayerByAttribute(lyr,att,val){
     return false;
 
 }
-
-window.onload = function () {
+setInterval(() => {
     var lyr = returnLayerByAttribute(cemetery,'all_spacei', "{!! request()->get('graveId') !!}");
-    if (lyr) {
 
+    if (lyr) {
         lyrSearch = L.geoJSON(lyr.toGeoJSON(), { style: highlight}).addTo(map);
         map.fitBounds(lyr.getBounds().pad(1));
         var att = lyr.feature.properties;
@@ -334,9 +333,10 @@ window.onload = function () {
         "<br>" + "</h5<h5>Deceased Birth Date : " + (att.Deceased_BirthDate === null ? "" : formatDate(att.Deceased_BirthDate)) +"</h5>");
 
     } else {
-        $('#divProjectError').html("*** Grave ID not Found ***")
+        console.log('not found');
     }
-}
+}, 4000);
+
 
 
 
