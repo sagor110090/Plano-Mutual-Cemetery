@@ -6,18 +6,27 @@ use App\Http\Controllers\GraveController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\ReportController;
-
-Route::get('/', function () {
-    return view('dashboard.home');
-});
+use Illuminate\Support\Facades\Auth;
 
 // Auth::routes();
 
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('login',[AuthController::class,'show'])->name('loginView');
+Route::get('login',[AuthController::class,'loginView'])->name('loginView');
+Route::get('register',[AuthController::class,'registerShow'])->name('registerShow');
 Route::post('login',[AuthController::class,'login'])->name('login');
+Route::post('register',[AuthController::class,'register'])->name('register');
+
+Route::middleware(['auth'])->group(function () {
+
+Route::get('/', function () {
+    return view('dashboard.home');
+});
+Route::get('/logout', function () {
+    Auth::logout();
+    return back();
+});
 Route::get('grave',[GraveController::class,'index']);
 Route::get('grave-card-view',[GraveController::class,'card']);
 Route::get('grave-create',[GraveController::class,'create']);
@@ -47,9 +56,17 @@ Route::post('purchase-update/{id}',[PurchaseController::class,'update']);
 Route::get('purchase-delete/{id}',[PurchaseController::class,'delete']);
 
 // report
-Route::get('graves-by-section',[ReportController::class,'gravesBySection']);
+Route::get('report-graves-by-section',[ReportController::class,'gravesBySection']);
+Route::get('report-graves-list-by-name',[ReportController::class,'gravesByName']);
+Route::get('list-owner-section-by-purchase-date',[ReportController::class,'gravesBypurchase']);
+Route::get('list-grave',[GraveController::class,'index']);
+Route::get('list-owner',[OwnerController::class,'index']);
+Route::get('burials_by_deceased',[ReportController::class,'burials_by_deceased']);
+Route::get('graves-for-sale',[ReportController::class,'graves-for-sale']);
 
 
 // map
 Route::get('core',[GraveController::class,'core']);
 Route::get('sections',[GraveController::class,'sections']);
+
+});

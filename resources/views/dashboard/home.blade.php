@@ -46,28 +46,23 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6 mt-4">
-                                <a href="#" class="btn btn-default" >List Owaners by section</a>
+                                <a href="{{ url('report-graves-by-section') }}" class="btn btn-default" >List Owaners by section</a>
                             </div>
                             <div class="col-md-6 mt-4">
-                                <a href="#" class="btn btn-default" >List Owners by name</a>
+                                <a href="{{ asset('report-graves-list-by-name') }}" class="btn btn-default" >List Owners by name</a>
                             </div>
                             <div class="col-md-6 mt-4">
-                                <a href="#" class="btn btn-default" >List Owaners of section by purchase date</a>
+                                <a href="{{ asset('list-owner-section-by-purchase-date') }}" class="btn btn-default" >List Owaners of section by purchase date</a>
                             </div>
                             <div class="col-md-6 mt-4">
-                                <a href="#" class="btn btn-default" >Burials By Deceased Name</a>
+                                <a href="{{ asset('burials_by_deceased') }}" class="btn btn-default" >Burials by deceased name</a>
+                            </div>
+
+                            <div class="col-md-6 mt-4">
+                                <a href="{{ asset('list-grave') }}" class="btn btn-default" >Graves Listing</a>
                             </div>
                             <div class="col-md-6 mt-4">
-                                <a href="#" class="btn btn-default" >Grave Available for Sale</a>
-                            </div>
-                            <div class="col-md-6 mt-4">
-                                <a href="#" class="btn btn-default" >Masonic Graves Listing</a>
-                            </div>
-                            <div class="col-md-6 mt-4">
-                                <a href="#" class="btn btn-default" >Graves Listing</a>
-                            </div>
-                            <div class="col-md-6 mt-4">
-                                <a href="#" class="btn btn-default" >Owners Listing by Owners#</a>
+                                <a href="{{ asset('list-owner') }}" class="btn btn-default" >Owners Listing by Owners#</a>
                             </div>
                         </div>
                     </div>

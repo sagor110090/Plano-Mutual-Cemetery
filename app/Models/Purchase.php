@@ -19,5 +19,5 @@ class Purchase extends Model
          "Purchase_Amt",
         "Reference#",
          "Purchase_Notes",
-    ]; 
+    ];
 }

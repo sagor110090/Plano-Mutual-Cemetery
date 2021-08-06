@@ -85,4 +85,6 @@ class OwnerController extends Controller
         return back()->with('message','Successfully deleted..');
 
     }
+
+    
 }

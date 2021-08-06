@@ -34,7 +34,7 @@
             </a>
         </li>
 
-        <li class="nav-item ">
+        {{-- <li class="nav-item ">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
@@ -86,6 +86,14 @@
                     </a>
                 </li>
             </ul>
+        </li> --}}
+        <li class="nav-item">
+            <a href="{{ url('logout') }}" class="nav-link">
+                <i class="nav-icon fa fa-sign-out"></i>
+                <p>
+                    logout
+                </p>
+            </a>
         </li>
     </ul>
 </nav>
